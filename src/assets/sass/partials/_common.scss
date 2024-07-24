@@ -1,0 +1,104 @@
+/* global custom attributes */
+@use 'mixins' as *;
+@use 'fonts' as *;
+
+//breakpoints variables
+$sm: 320px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+#root {
+	width: 100vw;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+//h1
+h1 {
+	padding-bottom: 0;
+	font-size: 4rem;
+	color: #000;
+	text-align: left;
+	line-height: 1;
+	word-spacing: 1px;
+
+	&.hero-title{
+		margin-bottom: 1rem;
+	}
+}
+
+//enabling flexbox in any container
+.fl-box {
+	display: flex;
+
+	//vertically center
+	&.fl-col-c {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+//force alignment for child containers inside flexed parent
+
+/* align self flex-start => left aligned */
+.al-sf-l{
+	flex-direction: row;
+	align-self: flex-start;
+}
+
+
+//padding classes
+.px-1 {
+	@include pad-x(1rem);
+}
+
+.py-1 {
+	@include pad-y(1rem);
+}
+
+.px-2 {
+	@include pad-x(2rem);
+}
+
+.py-2 {
+	@include pad-y(2rem);
+}
+
+//image collage hero => home page hero section
+.av {
+	--avw: 200px;
+	--avh: calc(var(--avw) * 1.5);
+	width: var(--avw);
+	height: var(--avh);
+
+	img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		object-fit: cover;
+		aspect-ratio: 2 / 3;
+		border-radius: 0.75rem;
+		margin-bottom: 2rem;
+		box-shadow: 0px 3px 7px #b7b2b2;
+	}
+
+	//first image
+	&.first {
+		@media screen and (min-width: $lg) {
+			margin-top: 15rem;
+		}
+	}
+
+	&.second {
+		@media screen and (min-width: $lg) {
+			margin-top: 3rem;
+		}
+	}
+}

@@ -1,0 +1,65 @@
+.row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+$columns: 12;
+
+[class^=col-]{
+    flex-basis: 100%;
+}
+
+//>=320px
+@media screen and (min-width: 320px){
+    @for $i from 1 through $columns{
+        .col-sm-#{$i}{
+            flex: 0 0 calc(100% / ($columns / $i) );
+        }
+    
+        .col-offset-sm-#{$i}{
+            margin-left: calc(100% / ($columns / $i));
+        }
+    }
+}
+
+
+
+//>=768px
+@media screen and (min-width: 768px){
+    @for $i from 1 through $columns{
+        .col-md-#{$i}{
+            flex: 0 0 calc(100% / ($columns / $i) );
+        }
+    
+        .col-offset-md-#{$i}{
+            margin-left: calc(100% / ($columns / $i));
+        }
+    }
+}
+
+//>=992px
+@media screen and (min-width: 992px){
+    @for $i from 1 through $columns{
+        .col-lg-#{$i}{
+            flex: 0 0 calc(100% / ($columns / $i) );
+        }
+    
+        .col-offset-lg-#{$i}{
+            margin-left: calc(100% / ($columns / $i));
+        }
+    }
+}
+
+//>=1200px
+@media screen and (min-width: 1200px){
+    @for $i from 1 through $columns{
+        .col-xl-#{$i}{
+            flex: 0 0 calc(100% / ($columns / $i) );
+        }
+    
+        .col-offset-xl-#{$i}{
+            margin-left: calc(100% / ($columns / $i));
+        }
+    }
+}
